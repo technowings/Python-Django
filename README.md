@@ -1,6 +1,6 @@
 # Python-Django
-Industry Orientation Training Programme- Python using Django Framework with Microsoft MTA Python Certification
-LIVE  PROJECT  TRAINING With Microsoft Certification By getting involved with our live training procedure you will get...........· 
+Industry Orientation Training Programme- Python & Django Framework 
+By getting involved with our live training procedure you will get...........· 
 Expert mentors to get 100% practical training· 
 Be familiar with the vision and working environments of an IT firm· Interoperability amongst different programming languages· 
 Learn the best thing and proven practice· Improve the qualities of leadership· 
