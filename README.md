@@ -1,2 +1,10 @@
 # Python-Django
-Industry Orientation Training ProgrammeLIVE  PROJECT  TRAININGWith Microsoft CertificationBy getting involved with our live training procedure you will get...........· Expert mentors to get 100% practical training· Be familiar with the vision and working environments of an IT firm· Interoperability amongst different programming languages· Learn the best thing and proven practice· Improve the qualities of leadership· Understand the complete project life cycle step by step· Improve the logical, analytical as well as communication skills· Increase the level of confidence· Learn different approaches and tactics to develop high-quality projectsAndroid Studio 4Right Skills + Industry OrientationProjects + International Certification + Placement Preparation under the guidance of Experts = Great CareerBatch Start 15th Aug 2020Fees - 3600.INRCall For Registration75882161089326076449After Successful completion of the Project Training students will get below certificates. 1. Certificate of course completion - From TechnoWings IT Solutions2. Internship and Project Completion Letter & Certificate - From TechnoWings IT Solutions3. Microsoft International Certification wwwDuration45 Day’sOnline Platfrom     www.technowingsindia.com                                    info@technowingsindia.com Python using Django Framework with Microsoft MTA Python Certification 
+Industry Orientation Training Programme- Python using Django Framework with Microsoft MTA Python Certification
+LIVE  PROJECT  TRAINING With Microsoft Certification By getting involved with our live training procedure you will get...........· 
+Expert mentors to get 100% practical training· 
+Be familiar with the vision and working environments of an IT firm· Interoperability amongst different programming languages· 
+Learn the best thing and proven practice· Improve the qualities of leadership· 
+Understand the complete project life cycle step by step· Improve the logical, analytical as well as communication skills· 
+Increase the level of confidence· Learn different approaches and tactics to develop high-quality projects
+
+    www.technowingsindia.com                                    info@technowingsindia.com  
