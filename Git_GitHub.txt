@@ -1,0 +1,28 @@
+############ How to use git ##########
+1) Make Repository in GitHub 
+2) Go to https://git-scm.com/ and download git as per your platform 
+3) Install GIT 
+4) Check Git Version - 
+   $> git --version
+5) Clone GitHub repository to your local machine 
+   $> git clone URL_OF_Repositary
+6) Copy your Project directory in repository directory
+7) Open Terminal,Change the current working directory to your local repository directory.  
+8) $> git add YourProjectDirectoryName
+9) $> git commit -m "Your comment here"
+10)$> git push URL_OF_Repositary
+
+
+
+######################### Example ########################
+
+In your terminal
+->  $ git init	
+	$ git add .
+	$ git commit -m "first commit"
+	$ git push master
+	
+
+
+
+

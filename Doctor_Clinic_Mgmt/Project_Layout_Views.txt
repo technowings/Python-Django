@@ -1,0 +1,11 @@
+Project Structure and Views
+
+1)Download Bootstrap Example form Below Link
+https://github.com/twbs/bootstrap/releases/download/v4.5.2/bootstrap-4.5.2-examples.zip
+
+2)Check dashboard code from downloaded package of example, you can also view it from below link
+https://getbootstrap.com/docs/4.5/examples/dashboard/
+
+3)Make one new folder for project and create login page and Dashboard as per project Requirement
+
+Note: Always remember all html pages must be responsive
