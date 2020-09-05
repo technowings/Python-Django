@@ -14,15 +14,17 @@
 
 
 
-######################### Example ########################
+######################### Multiple GitHub HTTPS accounts on Windows  ########################
 
-In your terminal
-->  $ git init	
-	$ git add .
-	$ git commit -m "first commit"
-	$ git push master
+1) remove your current GitHub credentials from Windows Credential Manager
+Go to Windows Credential Manager, open the Windows Credentials tab, locate git:https://github.com, open the entry, and click Remove.
+
+2) tell Windows to store different accounts for each of your GitHub repos
+git config --global credential.github.com.useHttpPath true
+
+3) provide your username, password once again for each repo when you are prompted for your credentials - this is the last time you need to do that
 	
 
-
+https://github.com/technowings/Python-Django.git
 
 
