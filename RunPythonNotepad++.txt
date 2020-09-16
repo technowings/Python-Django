@@ -1,0 +1,7 @@
+
+How to Run Python using notepad++
+
+C:\Path of\python.exe -i "$(FULL_CURRENT_PATH)"
+
+1)Go to Run -> Paste above address in Run(Your Address is Differant but after python.exe all are same
+2)Save this string 

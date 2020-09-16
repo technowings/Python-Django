@@ -1,0 +1,27 @@
+###MySQL Data Types###
+1)Numeric Data Type
+2)String Data Types
+3)Large Object Data Types (LOB) Data Types
+
+###How to Create Database###
+CREATE DATABASE database_name; 
+
+###Check Database###
+SHOW DATABASES; 
+
+###Select a Particular Database###
+USE database_name;  
+
+###Delete a Particular Database###
+DROP DATABASE database_name;   
+
+###How to Create Table###
+CREATE TABLE table_name (column_name column_type);
+
+###Show Table###
+SHOW tables; 
+
+###See the table structure:###
+
+DESCRIBE tablename;
+

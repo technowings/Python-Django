@@ -1,0 +1,24 @@
+################Python Tools####################
+
+
+Download Python Modules from https://pypi.org/project/pip/
+
+1)Install PIP
+Download get-pip.py to a folder on your computer.
+Open a command prompt and navigate to the folder containing get-pip.py.
+Run the following command:"python get-pip.py"
+
+2)install windows_curses
+download windows_curses-1.1-cp37-cp37m-win_amd64.whl
+Run the following command:"pip install windows_curses-1.1-cp37-cp37m-win_amd64.whl"
+
+Or 
+
+pip install windows curses
+
+3)install Pillow
+https://pypi.org/project/Pillow/2.2.2/
+pip install pillow
+
+4)install pygame :for gameing programming
+pip install pygame
