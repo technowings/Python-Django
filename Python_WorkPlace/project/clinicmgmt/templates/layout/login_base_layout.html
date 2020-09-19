@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Bodhi Technology is a leading software development company providing software consultancy and solutions to industries and educational institutes.We are onestop shop for all kinds of customzied softwares and automation required." />
+    <meta name="author" content="Bodhi Technology" />
+    <meta property="og:description" content="Bodhi Technology is a leading software development company providing software consultancy and solutions to industries and educational institutes.We are onestop shop for all kinds of customzied softwares and automation required. " />
+    <meta property="og:title" content="Bodhi Technology - Grow your business with us" />
+    <meta name="twitter:title" content="Bodhi Technology - Grow your business with us" />
+    <meta property="og:url" content="https://www.bodhitechnology.tech" />
+    <meta property="og:site_name" content="Bodhi Technology - Grow your business with us" />
+    <meta name="keywords" content="software,development,company,educational software,erp,admission,industrial,android,web,web application" />
+  
+    <meta property="og:image" content="assets/dist/img/logo/apple-icon-180x180.png" />
+   
+    <title>{% block title %} Login Base Layout {% endblock %}</title>
+
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css'%}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{% static 'assets/dist/css/ionicons.min.css'%}">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'%}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/jqvmap/jqvmap.min.css'%}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css'%}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css'%}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css'%}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.css'%}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+   <!-- iCheck for checkboxes and radio inputs -->
+   <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+   <!-- Select2 -->
+   <link rel="stylesheet" href="{% static 'assets/plugins/select2/css/select2.min.css'%}">
+   <link rel="stylesheet" href="{% static 'assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'%}">
+   
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'%}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'%}">
+  
+    <link rel="stylesheet" href="{% static 'assets/dist/css/mystyle.css'%}">
+
+    <!-- <link rel="stylesheet" href="{% static 'assets/dist/css/styleani.css'%}"> -->
+
+    
+
+
+    
+     <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/dist/img/logo/apple-icon-57x57.png'%}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/dist/img/logo/apple-icon-60x60.png'%}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/dist/img/logo/apple-icon-72x72.png'%}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/dist/img/logo/apple-icon-76x76.png'%}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/dist/img/logo/apple-icon-114x114.png'%}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/dist/img/logo/apple-icon-120x120.png'%}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/dist/img/logo/apple-icon-144x144.png'%}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/dist/img/logo/apple-icon-152x152.png'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/dist/img/logo/apple-icon-180x180.png'%}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'assets/dist/img/logo/android-icon-192x192.png'%}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/dist/img/logo/favicon-32x32.png'%}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/dist/img/logo/favicon-96x96.png'%}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/dist/img/logo/favicon-16x16.png'%}">
+  <link rel="manifest" href="{% static 'assets/dist/img/logo//manifest.json'%}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% static 'assets/dist/img/logo/ms-icon-144x144.png'%}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="{% static 'assets/dist/img/logo/favicon-16x16.png'%}" type="image/x-icon" />
+   
+  </head>
+
+<body class="hold-transition login-page" style="background-image: url('{% static 'assets/dist/img/backimg/4.jpg'%}'); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+
+    
+
+  <!-- START Page Content Block Here -->      
+  {% block content %}
+  <!-- Page Content Block Here -->      
+
+
+  {% endblock %}
+
+   <!-- END Page Content Block Here -->    
+ 
+
+
+
+
+
+
+
+
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js'%}"></script> 
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/dist/js/adminlte.min.js'%}"></script>
+
+<script src="{% static 'assets/dist/js/my.js'%}"></script>
+
+<script src="{% static 'assets/dist/js/validate.js'%}"></script>
+
+<!-- DataTables -->
+<script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js'%}"></script>
+<script src="{% static 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'%}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/dataTables.responsive.min.js'%}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'%}"></script>
+<!-- Select2 -->
+<script src="{% static 'assets/plugins/select2/js/select2.full.min.js'%}"></script>
+
+
+<!-- Script for Navigation Active-->
+<script>
+  $( '.navbar-nav a' ).on( 'click', function () {
+    $( '.navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+    $( this ).parent( 'li' ).addClass( 'active' );
+  });
+     </script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>
