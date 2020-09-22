@@ -1,6 +1,6 @@
 {% extends "layout/web_base_layout.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block title %}Bodhi Technology | Contact-Us {% endblock %}
 
 
@@ -68,16 +68,37 @@
         </div>
 
       </div>
-
+     
       <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-      <div  class="php-email-form" id="myform">
-        <form action="getformdata" method="post" role="form" class="php-email-form">
-          {% csrf_token %}
+        <div  class="php-email-form" id="myform">
+          <form method="post">
+            {% csrf_token %}
+          
+           
+            <div class="row">
+              <div class="col-6">
+                {{ form.name|as_crispy_field }}
+              </div>
+              <div class="col-6">
+                {{ form.email|as_crispy_field }}
+              </div>
+            </div>
+            {{ form.subject|as_crispy_field }}
+            {{ form.message|as_crispy_field }}
+           
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+  
+
+      
+        <!-- <form action="getformdata" method="post" role="form" class="php-email-form" id="myform">
+         
            <div class="form-row">
              <div class="form-group col-md-6">
            
                <label for="name">Your Name</label>
-               <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+               <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars"  />
                <div class="validate"></div>
              </div>
              <div class="form-group col-md-6">
@@ -102,9 +123,15 @@
              <div class="sent-message">Your message has been sent. Thank you!</div>
            </div>
            <div class="text-center"><button type="submit">Send Message</button></div>
-         </form>
+         </form> -->
       </div>
       </div>
+      <div> 
+        {% for message in messages %}
+        <h1>{{message}} </h1>
+        {% endfor %}
+   
+    </div>
 
     </div>
 

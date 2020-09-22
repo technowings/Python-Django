@@ -95,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <a href="#" class="navbar-brand">
       <img src="{% static 'assets/dist/img/logo/android-icon-48x48.png'%}" alt="Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span>Dr.Clinic</span>
+      <span>{{cname}}</span>
     </a>
     
     <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -218,7 +218,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <p class="float-right" ><a href="#" style="color: black;">Back to top</a></p>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://bodhitechnology.tech">Bodhi Technology</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://bodhitechnology.tech">{{cname}}</a>.</strong> All rights reserved.
   </footer>
 
 

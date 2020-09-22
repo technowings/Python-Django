@@ -10,6 +10,6 @@ urlpatterns = [
     path('profile',views.web_profile,name='profile'),
     path('appointment',views.web_appointment,name='appointment'),
     path('contactus',views.web_contact,name='contact'),
-    path('getformdata',views.getFormData,name='getformdata'),
+    # path('getformdata',views.getFormData,name='getformdata'),
                      
 ]
