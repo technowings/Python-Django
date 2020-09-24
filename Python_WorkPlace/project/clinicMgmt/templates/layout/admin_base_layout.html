@@ -1,0 +1,613 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Bodhi Technology is a leading software development company providing software consultancy and solutions to industries and educational institutes.We are onestop shop for all kinds of customzied softwares and automation required." />
+  <meta name="author" content="Bodhi Technology" />
+  <meta property="og:description" content="Bodhi Technology is a leading software development company providing software consultancy and solutions to industries and educational institutes.We are onestop shop for all kinds of customzied softwares and automation required. " />
+  <meta property="og:title" content="Bodhi Technology - Grow your business with us" />
+  <meta name="twitter:title" content="Bodhi Technology - Grow your business with us" />
+  <meta property="og:url" content="https://www.bodhitechnology.tech" />
+  <meta property="og:site_name" content="Bodhi Technology - Grow your business with us" />
+  <meta name="keywords" content="software,development,company,educational software,erp,admission,industrial,android,web,web application" />
+
+  <meta property="og:image" content="assets/dist/img/logo/apple-icon-180x180.png" />
+ 
+  <title>{% block title %} Admin Base Layout {% endblock %}</title>
+
+
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css'%}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/ionicons.min.css'%}">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css'%}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/jqvmap/jqvmap.min.css'%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css'%}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css'%}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css'%}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.css'%}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="{% static 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700'%}" rel="stylesheet">
+
+ <!-- iCheck for checkboxes and radio inputs -->
+ <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css'%}">
+ <!-- Select2 -->
+ <link rel="stylesheet" href="{% static 'assets/plugins/select2/css/select2.min.css'%}">
+ <link rel="stylesheet" href="{% static 'assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css'%}"> 
+  <!-- DataTables -->
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'%}">
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css'%}">
+
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/dist/img/logo/apple-icon-57x57.png'%}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/dist/img/logo/apple-icon-60x60.png'%}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/dist/img/logo/apple-icon-72x72.png'%}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/dist/img/logo/apple-icon-76x76.png'%}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/dist/img/logo/apple-icon-114x114.png'%}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/dist/img/logo/apple-icon-120x120.png'%}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/dist/img/logo/apple-icon-144x144.png'%}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/dist/img/logo/apple-icon-152x152.png'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/dist/img/logo/apple-icon-180x180.png'%}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'assets/dist/img/logo/android-icon-192x192.png'%}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/dist/img/logo/favicon-32x32.png'%}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/dist/img/logo/favicon-96x96.png'%}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/dist/img/logo/favicon-16x16.png'%}">
+  <link rel="manifest" href="{% static 'assets/dist/img/logo//manifest.json'%}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% static 'assets/dist/img/logo/ms-icon-144x144.png'%}">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="shortcut icon" href="{% static 'assets/dist/img/logo/favicon-16x16.png'%}" type="image/x-icon" />
+  
+
+</head>
+<body class="hold-transition sidebar-mini layout-navbar-fixed layout-fixed">
+<div class="wrapper">
+
+
+<!-- Navbar -->
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <h2 style="text-align:center">Application Name</h2>
+      </li>
+     
+    </ul>
+  
+    <!-- SEARCH FORM 
+ <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form> -->
+  
+     <!-- Right navbar links -->
+     <ul class="navbar-nav ml-auto">
+      
+  <li>  <h4 style="text-align:right"> page title here </h4>  </li>
+  
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#" data-toggle="tooltip" data-placement="bottom" title="Change Password">
+          
+          <i class="fa fa-cog fa-spin fa-1x fa-fw"></i>
+          
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">User Name</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> Change Password
+            
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> Profile
+       
+          </a>
+         
+       
+        </div>
+      </li>
+      
+    </ul>
+  
+  </nav>
+
+
+  <!-- /.navbar -->
+
+
+  <!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <img src="{% static 'assets/dist/img/apple-icon.png' %}" alt="School Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+    <span class="brand-text font-weight-light">Hello User</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+   
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+               <li class="nav-item has-treeview menu-close">
+                <a href="#" class="nav-link active">
+                   <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+                   <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                  <li class="nav-item" >
+                    <a href="{% url 'dashboard' %}" class="nav-link">  
+                      <i class="far fa-circle nav-icon"></i>
+                    <p>Dashboard</p>
+                    </a>
+                  </li>
+                </ul>
+             
+              </li>
+
+               <!--   School Information  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                School Setup
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item" >
+                <a href="#"  class="nav-link">  
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>School Infrormation</p>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Class Indormation</p>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cast-Category</p>
+                </a>
+              </li>
+            </ul>
+
+          
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Scholorships</p>
+                </a>
+              </li>
+            </ul>
+
+
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Holidays</p>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Events</p>
+                </a>
+              </li>
+            </ul>
+
+          </li>  <!--   School Information  End -->
+
+          <!--   Front Office  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                Front Office
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Admission Enquiry</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Visitors Book</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inward</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Outward</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Call Logs</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>  <!--   Front Office  End -->
+
+
+<!--  Student Admission  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                Student Admission
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Register Student</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Student ID Card Generate</p>
+                </a>
+              </li>
+                      
+            </ul>
+          </li> <!--  Student Admission  End -->
+
+<!--  Human Resource  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                Human Resource
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Register Staff</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Staff ID Card Generate</p>
+                </a>
+              </li>                  
+             
+
+            </ul>
+          </li>  <!--  Human Resource  End -->
+
+<!-- Academics  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                Academics
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Class Timetable</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Class Attendance</p>
+                </a>
+              </li>
+             
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Study Material
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Video</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Notes</p>
+                    </a>
+                  </li>                  
+                </ul>
+              </li>       
+              
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>
+                    Exam Management
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Add Exam Marks</p>
+                    </a>
+                  </li>
+                                  
+                </ul>
+              </li>    
+             
+            </ul>
+          </li>  <!-- Academics  End -->
+<!-- Schollership applay -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+               <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+               <p>
+                Scholership apply 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+         
+          </li>
+<!-- Certificates  Start -->
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+              <p>
+                Certificates
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bonafide</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Leaving Certificate</p>
+                </a>
+              </li>
+         
+             
+            </ul>
+          </li>
+<!-- Certificates  End -->
+
+
+<!-- Reports ---->
+<li class="nav-item has-treeview menu-close">
+  <a href="#" class="nav-link active">
+    <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
+    <p>
+      Reports
+      <i class="right fas fa-angle-left"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Bonafide Issue Report</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Leaving Certificate Issue Report</p>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Student Attendance Report</p> <!--class wise & total school also filter gender wise   -->
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Total Student Cast wise Report | Gender Wise | Class Wise</p>
+      </a>
+    </li> 
+
+    <li class="nav-item">
+      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Total Admited Student Cast wise Report | Gender Wise | Class Wise</p>
+      </a>
+    </li> 
+
+    <li class="nav-item">
+      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Student Marksheet Report | Gender Wise | Class Wise</p>
+      </a>
+    </li> 
+
+    <li class="nav-item">
+      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>Staff Report  | Gender Wise | Class Wise | Cast wise</p>
+      </a>
+    </li> 
+   
+  </ul>
+</li>
+<!----------------------------------------------------------------- -->          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Simple Link
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div class="content-wrapper">
+    
+  {% block content %}
+  <!-- Page Content Block Here -->      
+
+
+  {% endblock %}
+
+  </div>
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      <i class="fa fa-rocket">
+      <a href="#" style="color: black;"> </i> </a>
+      <p class="float-right" ><a href="#" style="color: black;">Back to top</a></p>
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://bodhitechnology.tech" target="blank">Bodhi Technology</a>.</strong> All rights reserved.
+  </footer>
+
+
+
+</div>
+<!-- ./wrapper -->
+
+
+
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>
+
+
+<!-- DataTables -->
+<script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'assets/plugins/select2/js/select2.full.min.js' %}"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+{% extends "layout/web_base_layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}{{company}} | Get-Appointment {% endblock %}
+
+
+{% block content %}          
+      
+  <br>
+
+   <!-- Main content -->
+   <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          
+          <!-- Default box -->
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Appointment</h3>
+            
+            </div>
+            
+            <form method="POST" >
+              {% csrf_token %}
+             
+            <div class="card-body">
+              <div class="row">
+               
+              
+               <div class="col-sm-3">
+                <!-- text input -->
+                <div class="form-group">
+                  {{ appointment_form.pName|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <!-- text input -->
+                <div class="form-group">
+                  {{ appointment_form.age|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <!-- text input -->
+                <div class="form-group">
+                  {{ appointment_form.sex|as_crispy_field }}
+                </div>
+              </div>
+              
+              <div class="col-sm-3">
+                <!-- text input -->
+                <div class="form-group">
+                  {{ appointment_form.appointment_date|as_crispy_field }}
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <!-- text input -->
+                <div class="form-group">
+                  {{ appointment_form.pMobile|as_crispy_field }}
+                </div>
+              </div>
+             
+  
+              
+                      
+            </div>   <!-- /.row -->
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>  <!-- /.card-footer-->
+                     
+  
+           
+          </div>
+        </form>
+  
+  
+        
+          <!-- /.card -->
+  
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+  
+
+
+
+
+
+ <!-- Appointment Form -->
+ <section class="content">
+  <div class="container-fluid">
+ <div class="card default-card">
+  <div class="card-header card-outline card-primary">
+    <h3 class="card-title" style="color: #6b2014;"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-lg">
+      Launch Large Modal
+    </button></h3> 
+  
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+     </div>
+  </div>
+  <!-- /.card-header -->
+
+  <div class="card-body ">
+    <div class="row">
+      <div class="col-md-12">
+
+                           
+        <!-- modal -->
+        <div class="modal fade" id="modal-lg">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Large Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>One fine body&hellip;</p>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+  
+
+       
+
+      </div>
+      <!-- /.col -->
+  
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  
+  </div>
+  <!-- /.card-body -->
+
+  <div class="card-footer">
+    Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
+    
+  </div>
+</div>
+</div>
+</section>
+<!-- /.card -->
+<!-- Appointment End -->
+
+
+
+ <!-- Awerness Card -->
+ <section class="content">
+  <div class="container-fluid">
+ <div class="card default-card">
+  <div class="card-header card-outline card-primary">
+    <h3 class="card-title" style="color: #6b2014;">Get Admission</h3> 
+  
+    <div class="card-tools">
+      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+     </div>
+  </div>
+  <!-- /.card-header -->
+
+  <div class="card-body ">
+    <div class="row">
+      <div class="col-md-12">
+
+                     
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdkWPSUAEEhyIdgg8pUh3BvSjx2PeTX8jdY1xLlpBIG35LixQ/viewform?embedded=true" width="640" height="1249" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          
+          </div>      
+
+      </div>
+      <!-- /.col -->
+  
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  
+  </div>
+  <!-- /.card-body -->
+
+  <div class="card-footer">
+    Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
+    
+  </div>
+</div>
+</div>
+</section>
+<!-- /.card -->
+<!-- Awerness End -->
+
+
+
+ 
+
+ 
+  
+
+
+
+
+
+
+      {% endblock %}
