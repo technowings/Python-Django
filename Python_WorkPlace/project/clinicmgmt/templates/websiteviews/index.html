@@ -1,482 +1,213 @@
 {% extends "layout/web_base_layout.html" %}
 {% load static %}
-{% block title %}Bodhi Technology | Index{% endblock %}
+{% block title %}{{company}} | Index{% endblock %}
 
 
 {% block content %}
 
-<br>
 
-     <!-- School Features -->
-     <section class="content">
-        <div class="container-fluid">
-       <div class="card default-card">
-        <div class="card-header card-outline card-primary">
-          <h3 class="card-title" style="color: #6b2014;">School Features</h3> 
+
+<!-- Carousel Start -->
+<section class="content" style="background-image: url('{% static 'assets/dist/img/carousel/b.jpg'%}');">
+  <div class="container-fluid">
         
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-           </div>
-        </div>
-        <!-- /.card-header -->
-      
-        <div class="card-body ">
-          <div class="row">
-            <div class="col-md-12">
- 
-                           
-                
-           <!-- Main content -->
-           <section class="content">
-            <div class="container-fluid">
-              <!-- Small boxes (Stat box) -->
-              <div class="row">
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-info" >
-                    <div class="inner">
-                      <h2 style="color: black;">Certified Teachers</h2>
-      
-                      <p style="color: black;">At Bodhi vidya mandir school teachers ability to deal with children, their thought process and their understanding of child psychology. Furthermore, This ensures that each student gets the benefit of personalized attention from highly qualified and trained tutors, who have been chosen for their dedication, competence and compassion that has made the school a role model for other institutions.we maintains the standard we prescribe for our teachers.</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-bag"></i>
-                    </div>
-                    <a href="#" class="small-box-footer" style="color: black;">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-success">
-                    <div class="inner">
-                      <h2>Education</h2>
-      
-                      <p>The management, staff and students are committed to this aim and work tirelessly to obtain the excellence in the academics, co-curricular, extra-curricular areas and be happily productive in their lives. The aim of the school is to provide depth based knowledge adapting new technology. We have rated ourselves as the toppers in the district to reach the heights in the field of education. We providing the advanced knowledge based education, We maintain healthy teaching learning relationship.</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-warning">
-                    <div class="inner">
-                      <h2>Book & Library</h2>
-      
-                      <p>Since the very first exposure to a child is through the visual medium and the written word, the school has created a friendly world of knowledge. The library where a wide range of books, comics, textbooks, encyclopedia, novels, expose children of all ages to a fascinating world. The reading habit is encouraged in the libraries cheerful, neat and spacious environs, where children learn to relax and enjoy reading.</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-person-add"></i>
-                    </div>
-                    <br>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                  <!-- small box -->
-                  <div class="small-box bg-danger">
-                    <div class="inner">
-                      <h2>Infrastructure</h2>
-      
-                      <p>The school building has been specially designed to give it a contemporary, stylish look. The classrooms are well ventilated with black boards to provide an ideal sanctum for academic progress to take place. Each class has a maximum of 60 pupils. The school has excellent infrastructure viz, air cooled school building, vast playground and spacious classroom.</p>
-                    </div>
-                    <div class="icon">
-                      <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <br><br>
-                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-                <!-- ./col -->
+
+
+    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="mask flex-center">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-12 order-md-1 order-2">
+                  <h4> Book an appointment for an <br>in-clinic consultation</h4>
+                  <p>Instant appointment with doctors <br><i> Instant appointment with doctors </i> </p>
+                  <a href="{% url 'appointment' %}">Book-Appointment</a> </div>
+                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{% static 'assets/dist/img/carousel/1.png' %}" class="mx-auto" alt="slide"></div>
               </div>
-              <!-- /.row -->
-                
-    
-            </div><!-- /.container-fluid -->
-          </section>
-          <!-- /. Main content -->
-
-             
-
-
-             
-
             </div>
-            <!-- /.col -->
-        
-            <!-- /.col -->
           </div>
-          <!-- /.row -->
-        
         </div>
-        <!-- /.card-body -->
-      
-        <div class="card-footer">
-          Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
-          
+        <div class="carousel-item">
+          <div class="mask flex-center">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-12 order-md-1 order-2">
+                  <h4>Consult Your doctor online for any health concern</h4>
+                  <p>Health Checkups and Screenings For Diabetic,Cancer,Skin Care ,Kidney and Urine,Digestive Health,Sexual Health,Bones and Joints,Fever <br><i> Get health checkups from the comfort of your home. </i> </p>
+                  <a href="{% url 'consultation' %}">Consult Now</a> </div>
+                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{% static 'assets/dist/img/carousel/2.png' %}" class="mx-auto" alt="slide"></div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="carousel-item">
+          <div class="mask flex-center">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-12 order-md-1 order-2">
+                  <h4>Diagnostic <br> Book Diagnostic Tests</h4>
+                  <p>Health Checkups and Screenings For Diabetic,Cancer,Skin Care ,Kidney and Urine,Digestive Health,Sexual Health,Bones and Joints,Fever <br><i> Get lab tests and full body checkups from the comfort of your home </i> </p>
+                  <a href="{% url 'diagnostic' %}"> Book Diagnostic</a> </div>
+                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{% static 'assets/dist/img/carousel/3.png' %}" class="mx-auto" alt="slide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="mask flex-center">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-12 order-md-1 order-2">
+                  <h4>Pharmacy <br>
+                    Genuine Medicines </h4>
+                  <p>All medicines and health products are sourced from doctors trusted network of verified pharmacies and medical stores<br><i>Order Medicines & Health Products Online : India's most reliable Online Medical Store</i></p>
+                  <a href="{% url 'pharmacy' %}">Order Now</a> </div>
+                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{% static 'assets/dist/img/carousel/4.png' %}" class="mx-auto" alt="slide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="mask flex-center">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-7 col-12 order-md-1 order-2">
+                  <h4>Download Android App 
+                     </h4>
+                  <p>Connect your Doctor online via your smartphone</p>
+                  <a href="{% url 'pharmacy' %}">Download App</a> </div>
+                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{% static 'assets/dist/img/carousel/4.png' %}" class="mx-auto" alt="slide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
       </div>
-    </div>
-      </section>
-      <!-- /.card -->
-   <!-- School Features End -->
-      
-  
+       
+    <!--slide end--> 
+       
 
-<br>
-
-
- <!-- School About -->
- <section class="content">
-    <div class="container-fluid">
-   <div class="card default-card">
-    <div class="card-header card-outline card-primary">
-      <h3 class="card-title" style="color: #6b2014;">About Us</h3> 
-    
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-       </div>
-    </div>
-    <!-- /.card-header -->
-  
-    <div class="card-body ">
-      <div class="row">
-        <div class="col-md-12">
-
-                             
-            <p style="text-align:center;">Bodhi Vidya Mandir & Junior College comprises of pre-primary section,Primary section,Higher secondary and Jr.College.
-                The school follows Maharashtra State Board Curriculum and the medium of instruction is Marathi for School and junior college have three main stream i.e. Science,Commerce & Arts. </p>
-              <ul type="square">
-                <li>Maharashtra State Board Pattern based curriculum.</li>
-                <li>Value based education by qualified experienced and dedicated staff.</li>
-                <li>Aims at maximum participation for the maximum number of students in a wide range of co-curricular activities.</li>
-                <li>Special emphasis on all-round development on students personality.</li>
-                <li>Self secure and soothing learning environment for the children.</li>
-                <li>Excellent infrastructure viz, air cooled school building, vast playgrounds, spacious classroom.</li>
-                <li>Well stocked library, well equipped science and computer labs, remedial classes for weak students. </li>
-              </ul>
-
-         
-
-        </div>
-        <!-- /.col -->
-    
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-    
-    </div>
-    <!-- /.card-body -->
-  
-    <div class="card-footer">
-      Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
-      
-    </div>
-  </div>
 </div>
-  </section>
-  <!-- /.card -->
-<!-- School About End -->
-
+</section>
+<!-- /.card -->
+ <!-- Carousel End -->
 
 <br>
+     <!-- Contact Us -->
 
-
-     <!-- School Key Members -->
      <section class="content">
-        <div class="container-fluid">
-       <div class="card default-card">
-        <div class="card-header card-outline card-primary">
-          <h3 class="card-title" style="color: #6b2014;">School Key Members</h3> 
-        
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-           </div>
-        </div>
-        <!-- /.card-header -->
-      
-        <div class="card-body ">
-          <div class="row">
-            <div class="col-md-12">
-            
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="our-team">
-                                <div class="pic">
-                                    <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="title">Williamson</h3>
-                                    <span class="post">Web Developer</span>
-                                    <ul class="social">
-                                        <li><a href="#" class="fab fa-facebook"></a></li>
-                                        <li><a href="#" class="fab fa-twitter"></a></li>
-                                        <li><a href="#" class="fab fa-google-plus"></a></li>
-                                        <li><a href="#" class="fab fa-skype"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                 
-                        <div class="col-md-3 col-sm-6">
-                            <div class="our-team">
-                                <div class="pic">
-                                    <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="title">Kristiana</h3>
-                                    <span class="post">Web Designer</span>
-                                    <ul class="social">
-                                        <li><a href="#" class="fab fa-facebook"></a></li>
-                                        <li><a href="#" class="fab fa-twitter"></a></li>
-                                        <li><a href="#" class="fab fa-google-plus"></a></li>
-                                        <li><a href="#" class="fab fa-skype"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="our-team">
-                                <div class="pic">
-                                    <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="title">Kristiana</h3>
-                                    <span class="post">Web Designer</span>
-                                    <ul class="social">
-                                        <li><a href="#" class="fab fa-facebook"></a></li>
-                                        <li><a href="#" class="fab fa-twitter"></a></li>
-                                        <li><a href="#" class="fab fa-google-plus"></a></li>
-                                        <li><a href="#" class="fab fa-skype"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6">
-                            <div class="our-team">
-                                <div class="pic">
-                                    <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                                </div>
-                                <div class="team-content">
-                                    <h3 class="title">Kristiana</h3>
-                                    <span class="post">Web Designer</span>
-                                    <ul class="social">
-                                        <li><a href="#" class="fab fa-facebook"></a></li>
-                                        <li><a href="#" class="fab fa-twitter"></a></li>
-                                        <li><a href="#" class="fab fa-google-plus"></a></li>
-                                        <li><a href="#" class="fab fa-skype"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-             
-
-            </div>
-            <!-- /.col -->
-        
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        
-        </div>
-        <!-- /.card-body -->
-      
-        <div class="card-footer">
-          Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
-          
-        </div>
-      </div>
-    </div>
-      </section>
-      <!-- /.card -->
-   <!-- School Key Members End -->
-
-
-
-   <br>
-
-
-   <!-- School toppers -->
-   <section class="content">
       <div class="container-fluid">
      <div class="card default-card">
-      <div class="card-header card-outline card-primary">
-        <h3 class="card-title" style="color: #6b2014;">School Toppers</h3> 
-      
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
-         </div>
-      </div>
-      <!-- /.card-header -->
-    
+         
       <div class="card-body ">
         <div class="row">
           <div class="col-md-12">
-          
 
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-3 col-sm-6">
-                          <div class="our-team">
-                              <div class="pic">
-                                  <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                              </div>
-                              <div class="team-content">
-                                  <h3 class="title">Williamson</h3>
-                                  <span class="post">Web Developer</span>
-                                  <ul class="social">
-                                      <li><a href="#" class="fab fa-facebook"></a></li>
-                                      <li><a href="#" class="fab fa-twitter"></a></li>
-                                      <li><a href="#" class="fab fa-google-plus"></a></li>
-                                      <li><a href="#" class="fab fa-skype"></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-               
-                      <div class="col-md-3 col-sm-6">
-                          <div class="our-team">
-                              <div class="pic">
-                                  <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                              </div>
-                              <div class="team-content">
-                                  <h3 class="title">Kristiana</h3>
-                                  <span class="post">Web Designer</span>
-                                  <ul class="social">
-                                      <li><a href="#" class="fab fa-facebook"></a></li>
-                                      <li><a href="#" class="fab fa-twitter"></a></li>
-                                      <li><a href="#" class="fab fa-google-plus"></a></li>
-                                      <li><a href="#" class="fab fa-skype"></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
+                         
+               <!-- ======= Contact Us Section ======= -->
+ <section id="contact" class="contact">
+  <div class="container">
+   
+    <div class="section-title">
+      <h1 style="text-align: center;color: #6b2014;">Visit Clinic</h1>
+      <p style="text-align: center;">Visit Clinic to full health checkup </p>
+    </div>
 
-                      <div class="col-md-3 col-sm-6">
-                          <div class="our-team">
-                              <div class="pic">
-                                  <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                              </div>
-                              <div class="team-content">
-                                  <h3 class="title">Kristiana</h3>
-                                  <span class="post">Web Designer</span>
-                                  <ul class="social">
-                                      <li><a href="#" class="fab fa-facebook"></a></li>
-                                      <li><a href="#" class="fab fa-twitter"></a></li>
-                                      <li><a href="#" class="fab fa-google-plus"></a></li>
-                                      <li><a href="#" class="fab fa-skype"></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
+    <div class="row">
 
-                      <div class="col-md-3 col-sm-6">
-                          <div class="our-team">
-                              <div class="pic">
-                                  <img src="{% static 'assets/dist/img/key_member/img-1.jpg'%}">
-                              </div>
-                              <div class="team-content">
-                                  <h3 class="title">Kristiana</h3>
-                                  <span class="post">Web Designer</span>
-                                  <ul class="social">
-                                      <li><a href="#" class="fab fa-facebook"></a></li>
-                                      <li><a href="#" class="fab fa-twitter"></a></li>
-                                      <li><a href="#" class="fab fa-google-plus"></a></li>
-                                      <li><a href="#" class="fab fa-skype"></a></li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
+      <div class="col-lg-7 d-flex align-items-stretch" >
+        <div class="info">
+          <div class="address">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
 
-                      <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="title">Kristiana</h3>
-                                <span class="post">Web Designer</span>
-                                <ul class="social">
-                                    <li><a href="#" class="fab fa-facebook"></a></li>
-                                    <li><a href="#" class="fab fa-twitter"></a></li>
-                                    <li><a href="#" class="fab fa-google-plus"></a></li>
-                                    <li><a href="#" class="fab fa-skype"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <h4>Location:</h4>
+            <p>Bodhi Technology,Limayewadi, Solapur, Maharashtra 413004</p>
+          </div>
 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="title">Kristiana</h3>
-                                <span class="post">Web Designer</span>
-                                <ul class="social">
-                                    <li><a href="#" class="fab fa-facebook"></a></li>
-                                    <li><a href="#" class="fab fa-twitter"></a></li>
-                                    <li><a href="#" class="fab fa-google-plus"></a></li>
-                                    <li><a href="#" class="fab fa-skype"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+          <div class="email">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="title">Kristiana</h3>
-                                <span class="post">Web Designer</span>
-                                <ul class="social">
-                                    <li><a href="#" class="fab fa-facebook"></a></li>
-                                    <li><a href="#" class="fab fa-twitter"></a></li>
-                                    <li><a href="#" class="fab fa-google-plus"></a></li>
-                                    <li><a href="#" class="fab fa-skype"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <h4>Email:</h4>
+            <p>bodhi.technology@outlook.com</p>
+          </div>
 
-                    <div class="col-md-3 col-sm-6">
-                        <div class="our-team">
-                            <div class="pic">
-                                <img src="{% static 'assets/dist/img/topper/img-2.jpg'%}">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="title">Kristiana</h3>
-                                <span class="post">Web Designer</span>
-                                <ul class="social">
-                                    <li><a href="#" class="fab fa-facebook"></a></li>
-                                    <li><a href="#" class="fab fa-twitter"></a></li>
-                                    <li><a href="#" class="fab fa-google-plus"></a></li>
-                                    <li><a href="#" class="fab fa-skype"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+          <div class="phone">
+              <i class="fa fa-phone fa-flip-horizontal" aria-hidden="true"></i>
 
+            <h4>Call:</h4>
+            <p>+91 8007915552</p>
+          </div>
 
-                  </div>
-              </div>
-           
+          <div class="embed-responsive embed-responsive-16by9">
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.947052414943!2d75.88745471425884!3d17.652666587920177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc5d1ab949b2ebd%3A0xa9f00451c79a5eb!2sBodhi%20Technology!5e0!3m2!1sen!2sin!4v1597165706462!5m2!1sen!2sin" width="500" height="550" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+         
+        </div>
+
+      </div>
+
+      <div class="col-lg-5 mt-5 mt-lg-0 d-flex align-items-stretch">
+<div class="php-email-form"> 
+  <h4 style="text-align: center;">Visiting Hours</h4>
+  <table class="redTable">
+    <thead>
+    <tr>
+    <th>Day</th>
+    <th>Morning</th>
+    <th>Evening</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    <tr>
+    <td>Monday</td>
+    <td>11:00 AM - 01:00 PM</td>
+    <td>05:00 PM - 09:00 PM</td>
+    </tr>
+    <tr>
+    <td>Tuesday </td>
+    <td>11:00 AM - 01:00 PM</td>
+    <td>05:00 PM - 09:00 PM</td>
+    </tr>
+    <tr>
+    <td>Wednesday </td>
+    <td>11:00 AM - 01:00 PM</td>
+    <td>05:00 PM - 09:00 PM</td>
+    </tr>
+    <tr>
+    <td>Thursday </td>
+    <td>11:00 AM - 01:00 PM</td>
+    <td>05:00 PM - 09:00 PM</td>
+    </tr>
+    <tr>
+    <td>Friday</td>
+    <td>11:00 AM - 01:00 PM</td>
+    <td>05:00 PM - 09:00 PM</td>
+    </tr>
+    <tr>
+      <td>Saturday </td>
+      <td>11:00 AM - 01:00 PM</td>
+      <td>05:00 PM - 09:00 PM</td>
+      </tr>
+    </tbody>
+    </table>
+    <br>
+  <div>
+    <img src="{% static 'assets/dist/img/carousel/medi.png' %}" class="mx-auto" alt="slide">
+  </div>
+</div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Us Section -->
+ 
 
           </div>
           <!-- /.col -->
@@ -489,15 +220,124 @@
       <!-- /.card-body -->
     
       <div class="card-footer">
-        Visit <a href="https://www.bodhitechnology.tech/">Our School </a> for more information about
+        Visit <a href="https://www.bodhitechnology.tech/">Clinic </a>to full health checkup 
         
       </div>
     </div>
   </div>
     </section>
     <!-- /.card -->
- <!-- School toppers End -->
+ <!-- Contact Us End -->
+  
 
+
+<!-- About Doctor-->
+     <section class="content">
+        <div class="container-fluid">
+       <div class="card default-card">
+        <div class="card-header card-outline card-primary">
+          <h3 class="card-title" style="color: #6b2014;">About Doctor</h3> 
+        
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+           </div>
+        </div>
+        <!-- /.card-header -->
+      
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-md-12">
+<p><h1>Add here Doctor’s bio with pic - Specializations,Education,Experience,Awards & Recognitions,Memberships</h1></p>
+<p><h4>and add some sentense about doctor ,how he/she have below qualities </h4></p>
+              <p>Here are the seven traits listed by the patients, along with the patients' definitions of those traits: </p>
+              <ul type="square">
+                <li>Confident: "The doctor's confidence gives me confidence."</li>
+                  <li>Empathetic: "The doctor tries to understand what I am feeling and experiencing, physically and emotionally, and communicates that understanding to me."</li>
+                    <li>Humane: "The doctor is caring, compassionate, and kind."</li>
+                      <li>Personal: "The doctor is interested in me more than just as a patient, interacts with me, and remembers me as an individual."</li>
+                        <li>Forthright: "The doctor tells me what I need to know in plain language and in a forthright manner."</li>
+                          <li>Respectful: "The doctor takes my input seriously and works with me."</li>
+                            <li>Thorough: "The doctor is conscientious and persistent."</li>
+
+                </ul>
+            
+            <p>That list isn't in any particular order. The researchers didn't check whether confidence was more important to patients than respectful treatment, for instance. </p>
+             
+
+            </div>
+            <!-- /.col -->
+        
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        
+        </div>
+        <!-- /.card-body -->
+      
+        <div class="card-footer">
+          Visit <a href="https://www.bodhitechnology.tech/">Clinic </a>to full health checkup 
+          
+        </div>
+      </div>
+    </div>
+      </section>
+      <!-- /.card -->
+   <!-- About Doctor End -->
+      
+  
+
+<br>
+
+
+ <!-- Clinic About -->
+ <section class="content">
+    <div class="container-fluid">
+   <div class="card default-card">
+    <div class="card-header card-outline card-primary">
+      <h3 class="card-title" style="color: #6b2014;">About Clinic</h3> 
+    
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i></button>
+       </div>
+    </div>
+    <!-- /.card-header -->
+  
+    <div class="card-body ">
+      <div class="row">
+        <div class="col-md-12">
+
+                             
+            <p style="text-align:center;">Add here Clinic’s photographs with features... like hygienic envirounment </p>
+         <p>Clinic profile would be pretty much same as doctor profile, except for a couple of extra features and a different layout. Notable features for the clinic profile page include:
+
+         
+          Other Doctors who practice there
+      </p>
+
+        </div>
+        <!-- /.col -->
+    
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    
+    </div>
+    <!-- /.card-body -->
+  
+    <div class="card-footer">
+      Visit <a href="https://www.bodhitechnology.tech/">Clinic </a>to full health checkup 
+      
+    </div>
+  </div>
+</div>
+  </section>
+  <!-- /.card -->
+<!-- Clinic About End -->
+
+
+
+
+     
  
 
 
