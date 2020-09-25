@@ -1,0 +1,28 @@
+############ Django Mysql  - First install MYSQL Run it and follow below instructions ############
+
+1) Set seetings in settings.py
+
+DATABASES = {
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'clinic',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+2) Install Dependancy
+~ pip install mysqlclient
+
+3) Make Migrations
+~  python manage.py makemigrations
+
+4) create tables from models in SQL
+~ python manage.py sqlmigrate appname version
+Ex--> python manage.py sqlmigrate website 0001
+
+5)Migrate all SQL in DBMS
+~ python manage.py migrate
+

@@ -80,9 +80,13 @@ WSGI_APPLICATION = 'clinicMgmt.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+   'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'clinic',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -136,8 +140,8 @@ STATICFILES_DIRS=[
 EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = 'vaishnavi.technology@outlook.com'
-EMAIL_HOST_PASSWORD = 'Ani@1985'
+EMAIL_HOST_USER = 'your email'
+EMAIL_HOST_PASSWORD = 'your password'
 EMAIL_USE_TLS = True
 CNAME="Dr.Clinic"
 DEVLOPER="Bodhi Technology"

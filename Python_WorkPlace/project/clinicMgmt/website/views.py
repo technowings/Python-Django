@@ -3,6 +3,7 @@ from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm,AppointmentForm
 from django.conf import settings as conf_set
+from website.models import Appointment
 
 
 # Create your views here.
@@ -22,11 +23,20 @@ def web_index(request):
             pMobile = appointment_form.cleaned_data['pMobile']
             #message = appointment_form.cleaned_data['p_message']
             message_send="\n Patient Name : "+person_name
+            saveAppoint=Appointment()
             try:
+                saveAppoint.name=person_name
+                saveAppoint.page=age
+                saveAppoint.gender=sex
+                saveAppoint.ap_date=aDate
+                saveAppoint.mobile=pMobile
+                saveAppoint.save()
+                
+
                 print(message_send)
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect('appointment')
+            return redirect('index')
     context = {
         'appointment_form': appointment_form,
         'home_page': 'active',
