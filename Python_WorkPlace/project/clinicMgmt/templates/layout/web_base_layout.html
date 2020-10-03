@@ -122,8 +122,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="{% url 'diagnostic' %}" class="nav-link">Diagnostic</a>
         </li>
               
-        <li class="nav-item">
-          <a href="{% url 'login' %}" class="nav-link">Covid-19</a>
+        <li class="nav-item {{covid_page}}" >
+          <a href="{% url 'covid19' %}" class="nav-link">Covid-19</a>
         </li> 
 
         <li class="nav-item">

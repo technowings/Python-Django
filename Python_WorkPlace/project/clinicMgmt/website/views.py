@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import ContactForm,AppointmentForm
+from .forms import ContactForm,AppointmentForm,CovidForm
 from django.conf import settings as conf_set
-from website.models import Appointment
+from website.models import Appointment,Covid19
+from django.contrib import messages
 
 
 # Create your views here.
@@ -20,20 +21,20 @@ def web_index(request):
             age = appointment_form.cleaned_data['age']
             sex = appointment_form.cleaned_data['sex']
             aDate = appointment_form.cleaned_data['appointment_date']
+            aSess= appointment_form.cleaned_data['appointment_session']
             pMobile = appointment_form.cleaned_data['pMobile']
-            #message = appointment_form.cleaned_data['p_message']
-            message_send="\n Patient Name : "+person_name
+            message = appointment_form.cleaned_data['p_message']
             saveAppoint=Appointment()
             try:
                 saveAppoint.name=person_name
-                saveAppoint.page=age
+                saveAppoint.dob=age
                 saveAppoint.gender=sex
-                saveAppoint.ap_date=aDate
+                saveAppoint.appointment_date=aDate
+                saveAppoint.appointment_session=aSess
                 saveAppoint.mobile=pMobile
+                saveAppoint.message=message
                 saveAppoint.save()
-                
-
-                print(message_send)
+                              
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('index')
@@ -58,6 +59,55 @@ def web_pharmacy(request):
     cname=conf_set.CNAME
     context = {"pharmacy_page": "active","company":cname} # its for nav menu active
     return render(request,'websiteviews/pharmacy.html',context)  
+
+def web_covid19(request):
+    cname=conf_set.CNAME
+    if request.method == 'GET':
+        form = CovidForm()
+    else:
+        form = CovidForm(request.POST)
+        if form.is_valid():
+            name=form.cleaned_data['pName']
+            age=form.cleaned_data['age']
+            sex=form.cleaned_data['sex']
+            address=form.cleaned_data['address']
+            date_of_checkup=form.cleaned_data['date_of_checkup']
+            pMobile=form.cleaned_data['pMobile']
+            weight=form.cleaned_data['weight']
+            pulse=form.cleaned_data['pulse']
+            blood_pressure=form.cleaned_data['blood_pressure']
+            temprature=form.cleaned_data['temprature']
+            spo2=form.cleaned_data['spo2']
+            symptoms=form.cleaned_data['symptoms']
+            comorbidity_existing_disease=form.cleaned_data['comorbidity_existing_disease']
+            try:
+                covid_obj=Covid19()
+                covid_obj.pName=name
+                covid_obj.age=age
+                covid_obj.sex=sex
+                covid_obj.address=address
+                covid_obj.date_of_checkup=date_of_checkup
+                covid_obj.pMobile=pMobile
+                covid_obj.weight=weight
+                covid_obj.pulse=pulse
+                covid_obj.blood_pressure=blood_pressure
+                covid_obj.temprature=temprature
+                covid_obj.spo2=spo2
+                covid_obj.symptoms=symptoms
+                covid_obj.comorbidity_existing_disease=comorbidity_existing_disease
+                covid_obj.save()              
+                messages.info(request,"Data store Sucessfully.......")
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('index')
+    context = {
+        'form': form,
+        'covid_page': 'active',
+        "company":cname
+    }        
+    return render(request, "websiteviews/covid19.html",context)
+
+
 
 
 
