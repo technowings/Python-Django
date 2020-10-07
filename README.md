@@ -7,4 +7,5 @@ Learn the best thing and proven practice· Improve the qualities of leadership·
 Understand the complete project life cycle step by step· Improve the logical, analytical as well as communication skills· 
 Increase the level of confidence· Learn different approaches and tactics to develop high-quality projects
 
-    https://www.technowingsindia.com/                                    info@technowingsindia.com  
+    https://www.technowingsindia.com/                                    
+	info@technowingsindia.com  

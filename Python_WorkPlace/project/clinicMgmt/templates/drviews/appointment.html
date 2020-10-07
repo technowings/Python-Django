@@ -1,0 +1,67 @@
+{% extends "layout/admin_base_layout.html" %}
+{% load static %}
+{% block title %}{{company}} | Appointments{% endblock %}
+
+
+{% block content %}
+<br>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Patient Appointments</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Appointment_date</th>
+        <th>Appointment_session</th>
+        <th>Patient Mobile</th>
+        <th>Message</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Trident</td>
+        <td>Internet
+          Explorer 4.0
+        </td>
+        <td>Win 95+</td>
+        <td> 4</td>
+        <td>X</td>
+        <td> 4</td>
+        <td>X</td>
+      </tr>
+
+
+
+
+
+
+      </tbody>
+      <!-- <tfoot>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th>Engine version</th>
+        <th>CSS grade</th>
+      </tr>
+      </tfoot> -->
+     
+    </table>
+    <div >
+   <a href="#"  > <input type="button" value="print"/>  </a>
+   <a href="#" > <input type="button" value="Export"/>  </a>
+  </div>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+     
+{% endblock %}

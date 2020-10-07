@@ -92,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <h2 style="text-align:center">Application Name</h2>
+        <h2 style="text-align:center">{{company}} Management</h2>
       </li>
      
     </ul>
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
      <!-- Right navbar links -->
      <ul class="navbar-nav ml-auto">
       
-  <li>  <h4 style="text-align:right"> page title here </h4>  </li>
+  <li>  <h4 style="text-align:right"> {{page_title}} </h4>  </li>
   
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">User Name</span>
+          <span class="dropdown-item dropdown-header"><h3>{{user}}</h3></span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> Change Password
@@ -150,9 +150,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="{% static 'assets/dist/img/apple-icon.png' %}" alt="School Logo" class="brand-image img-circle elevation-3"
+      <img src="{% static 'assets/dist/img/logo/apple-icon.png' %}" alt="Dr Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-    <span class="brand-text font-weight-light">Hello User</span>
+    <span class="brand-text font-weight-light">{{company}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -186,117 +186,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <!--   School Information  Start -->
           <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link active">
+            <a href="{% url 'admin_appointment' %}" class="nav-link active">
               <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
               <p>
-                Todays Appointments
+                 Appointments
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item" >
-                <a href="#"  class="nav-link">  
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>School Infrormation</p>
-                </a>
-              </li>
-            </ul>
+          
 
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Class Indormation</p>
-                </a>
-              </li>
-            </ul>
+           
 
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Cast-Category</p>
-                </a>
-              </li>
-            </ul>
 
           
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item" >
+                <a href="{% url 'admin_appointment' %}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Patient History</p>
+                <p> Appointments</p>
                 </a>
               </li>
             </ul>
 
 
 
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Holidays</p>
-                </a>
-              </li>
-            </ul>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Events</p>
-                </a>
-              </li>
-            </ul>
-
-          </li>  <!--   School Information  End -->
+          
+         </li>  <!--   School Information  End -->
 
           <!--   Front Office  Start -->
           <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
               <p>
-               Covid 19 Patient 
+               Covid 19 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+
             <ul class="nav nav-treeview">
-              
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item" >
+                <a href="{% url 'admin_covid19' %}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Admission Enquiry</p>
+                <p>Covid 19</p>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Visitors Book</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inward</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Outward</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Call Logs</p>
-                </a>
-              </li>
-
             </ul>
           </li>  <!--   Front Office  End -->
 
@@ -310,22 +243,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Register Student</p>
-                </a>
-              </li>
 
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+            <ul class="nav nav-treeview">
+              <li class="nav-item" >
+                <a href="{% url 'dashboard' %}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p> Student ID Card Generate</p>
+                <p>Patient History</p>
                 </a>
               </li>
-                      
             </ul>
+           
           </li> <!--  Student Admission  End -->
 
 <!--  Human Resource  Start -->
@@ -338,24 +265,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
-
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item" >
+                <a href="{% url 'admin_pregister' %}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Register Staff</p>
+                <p>Patient Register</p>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Staff ID Card Generate</p>
-                </a>
-              </li>                  
-             
-
             </ul>
+           
           </li>  <!--  Human Resource  End -->
 
 <!-- Academics  Start -->
@@ -368,177 +285,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
-              
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+              <li class="nav-item" >
+                <a href="{% url 'dashboard' %}" class="nav-link">  
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Class Timetable</p>
+                <p>Prescription</p>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Class Attendance</p>
-                </a>
-              </li>
-             
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-copy"></i>
-                  <p>
-                    Study Material
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Video</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Notes</p>
-                    </a>
-                  </li>                  
-                </ul>
-              </li>       
-              
-              <li class="nav-item has-treeview">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-copy"></i>
-                  <p>
-                    Exam Management
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Add Exam Marks</p>
-                    </a>
-                  </li>
-                                  
-                </ul>
-              </li>    
-             
             </ul>
+            
           </li>  <!-- Academics  End -->
-<!-- Schollership applay -->
+
+
+
           <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link active">
-               <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
-               <p>
-                Scholership apply 
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-         
-          </li>
-<!-- Certificates  Start -->
-          <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link active">
+            <a href="{% url 'logout' %}" class="nav-link active">
               <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
               <p>
-                Certificates
+              Logout
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bonafide</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Leaving Certificate</p>
-                </a>
-              </li>
-         
-             
-            </ul>
-          </li>
-<!-- Certificates  End -->
-
-
-<!-- Reports ---->
-<li class="nav-item has-treeview menu-close">
-  <a href="#" class="nav-link active">
-    <i class="nav-icon fa fa-cog fa-spin fa-3x fa-fw"></i>
-    <p>
-      Reports
-      <i class="right fas fa-angle-left"></i>
-    </p>
-  </a>
-  <ul class="nav nav-treeview">
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Bonafide Issue Report</p>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Leaving Certificate Issue Report</p>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Student Attendance Report</p> <!--class wise & total school also filter gender wise   -->
-      </a>
-    </li>
-    <li class="nav-item">
-      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Total Student Cast wise Report | Gender Wise | Class Wise</p>
-      </a>
-    </li> 
-
-    <li class="nav-item">
-      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Total Admited Student Cast wise Report | Gender Wise | Class Wise</p>
-      </a>
-    </li> 
-
-    <li class="nav-item">
-      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Student Marksheet Report | Gender Wise | Class Wise</p>
-      </a>
-    </li> 
-
-    <li class="nav-item">
-      <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-        <i class="far fa-circle nav-icon"></i>
-        <p>Staff Report  | Gender Wise | Class Wise | Cast wise</p>
-      </a>
-    </li> 
-   
-  </ul>
-</li>
+           
+            
+          </li>  <!-- Academics  End -->
 <!----------------------------------------------------------------- -->          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -563,7 +334,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <p class="float-right" ><a href="#" style="color: black;">Back to top</a></p>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://bodhitechnology.tech" target="blank">Bodhi Technology</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> <a href="https://bodhitechnology.tech" target="blank">{{company}}</a>.</strong> All rights reserved.
   </footer>
 
 

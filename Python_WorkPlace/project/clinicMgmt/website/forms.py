@@ -1,5 +1,6 @@
 from django import forms
 
+
 SESSIONS = (
     ('', 'Choose...'),
     ('Morning', 'Morning'),
@@ -22,12 +23,12 @@ class ContactForm(forms.Form):
     message=forms.CharField(widget=forms.Textarea(),label='Message',max_length=500,min_length=10,empty_value=False,required=True)
 
 class AppointmentForm(forms.Form):
-    pName=forms.CharField(label="Name",max_length=50,min_length=4,empty_value=False,required=True)
-    age=forms.CharField(label="DOB",widget=forms.TextInput(attrs={'placeholder': 'DD/MM/YYYY'}),empty_value=False,required=True)    
+    pName=forms.CharField(widget=forms.TextInput(attrs={'title': 'Type your name','placeholder': 'Your name'}),error_messages = {"key": "name here..."},label="Name",max_length=50,min_length=4,empty_value=False,required=True)
+    age=forms.CharField(label="DOB",widget=forms.TextInput(attrs={'type': 'date','placeholder': 'DD/MM/YYYY'}),empty_value=False,required=True)    
     sex=forms.ChoiceField(label="Gender",choices=GENDERS,required=True)
-    appointment_date=forms.CharField(label="Appointment Date",widget=forms.TextInput(attrs={'placeholder': 'DD/MM/YYYY'}),max_length=10,min_length=8,empty_value=False,required=True)
-    appointment_session=forms.ChoiceField(label="Appointment Session",choices=SESSIONS,required=True)
-    pMobile=forms.CharField(label="Mobile",max_length=10,min_length=10,empty_value=False,required=True)
+    appointment_date=forms.CharField(label="Appointment Date",widget=forms.TextInput(attrs={'type': 'date','placeholder': "DD/MM/YYYY"}),max_length=10,min_length=8,empty_value=False,required=True)
+    appointment_session=forms.TypedChoiceField(label="Appointment Session",choices=SESSIONS,required=True)
+    pMobile=forms.CharField(widget=forms.TextInput(attrs={'type':'number','title':'Enter numbers Only '}),error_messages = {"key": "mobile number here..."},label="Mobile",max_length=10,min_length=10,empty_value=False,required=True)
     p_message=forms.CharField(widget=forms.Textarea(attrs={'cols':20,'rows':1,'style':'height:2.5em;'}),label='Message',max_length=100,min_length=10,empty_value=False,required=False)
 
 class CovidForm(forms.Form):

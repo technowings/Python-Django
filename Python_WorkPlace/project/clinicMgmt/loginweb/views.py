@@ -1,7 +1,7 @@
 from django.shortcuts import redirect,render
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from loginweb.forms import LoginForm,RegisterForm
+from loginweb.forms import LoginForm,RegisterForm,PRegistrationForm
 from django.conf import settings as conf_set
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
@@ -59,6 +59,7 @@ def web_login(request):
                 user=auth.authenticate(username=userName,password=userPassword)
                 if user is not None:
                     auth.login(request,user)
+                    request.session['username']=userName
                     return redirect('dashboard')
                 else:
                     messages.error(request,'invalid Credi.... try again')    
@@ -72,5 +73,72 @@ def web_login(request):
 
 
 def web_dashboard(request):
-    return render(request,"dashboard/dashboard.html") 
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']
+        context = {
+            'company':cname,
+            'user':user_name,
+            'page_title':"Dashboard"
+            }
+        return render(request,"drviews/dashboard.html",context) 
+    else:
+        return redirect('login') 
+
+def web_logout(request):
+    del request.session['username']
+    auth.logout(request)
+    return redirect('login')
+
+def admin_appointment(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']
+        context = {
+            'company':cname,
+            'user':user_name,
+            'page_title':"Appointments"
+            }
+        return render(request,"drviews/appointment.html",context)  
+    else:
+        return redirect('login')
+
+def admin_covid19(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']        
+        context={'company':cname,
+            'user':user_name,
+            'page_title':"Covid19"
+            }
+        return render(request,"drviews/covid19.html",context)
+    else:
+        return redirect('login')  
+
+def admin_Pregister(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username'] 
+        if request.method=='GET':
+            pregisterForm=PRegistrationForm()
+        else:
+            pregisterForm=PRegistrationForm(request.POST)
+            if pregisterForm.is_valid():
+                user_email=pregisterForm.cleaned_data['PR_email']
+                user_fistname=pregisterForm.cleaned_data['PR_firstname']
+                user_lastname=pregisterForm.cleaned_data['PR_lastname']
+                try:
+                    pass
+                except:
+                    return HttpResponse('Invalid header found. here...')
+                #return redirect('register')   
+
+    context = {
+        'pregisterForm': pregisterForm,'company':cname,'user':user_name,'page_title':"Patients Registration"
+        }        
+    return render(request, "drviews/registration.html",context)
+
+
+
+
 

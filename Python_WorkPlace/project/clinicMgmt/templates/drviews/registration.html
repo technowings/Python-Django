@@ -1,0 +1,122 @@
+{% extends "layout/admin_base_layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}{{company}} | Registration{% endblock %}
+
+
+{% block content %}
+<br>
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Patient Registration</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <form method="POST" id="myform">
+      {% csrf_token %}
+     
+    
+      <div class="row">
+       
+      
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group">
+            {{ pregisterForm.PR_firstname|as_crispy_field }}
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group">
+            {{ pregisterForm.PR_lastname|as_crispy_field }}
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_email|as_crispy_field }}
+          </div>
+        </div>
+
+               
+      
+              
+    </div>   <!-- /.row -->
+    
+                   
+    <div class="modal-footer justify-content-between">
+      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button> -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  
+</form> 
+    <!-- <div >
+   <a href="#"  > <input type="button" value="print"/>  </a>
+   <a href="#" > <input type="button" value="Export"/>  </a>
+  </div> -->
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Register Patients</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Appointment_date</th>
+        <th>Appointment_session</th>
+        <th>Patient Mobile</th>
+        <th>Message</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Trident</td>
+        <td>Internet
+          Explorer 4.0
+        </td>
+        <td>Win 95+</td>
+        <td> 4</td>
+        <td>X</td>
+        <td>   <a href="#" > <input type="button" value="Print"/>  </a></td>
+        <td><a href="#" > <input type="button" value="Export"/>  </a></td>
+      </tr>
+
+
+
+
+
+
+      </tbody>
+      <!-- <tfoot>
+      <tr>
+        <th>Rendering engine</th>
+        <th>Browser</th>
+        <th>Platform(s)</th>
+        <th>Engine version</th>
+        <th>CSS grade</th>
+      </tr>
+      </tfoot> -->
+     
+    </table>
+    <div >
+   <!-- <a href="#"  > <input type="button" value="print"/>  </a> -->
+   <a href="#" > <input type="button" value="Export"/>  </a>
+  </div>
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+     
+{% endblock %}
