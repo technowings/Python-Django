@@ -1,0 +1,47 @@
+################# How to Deploy Website on Firebase #######################
+
+1) Google Login Required 
+https://console.firebase.google.com/
+
+2)Create Project 
+
+3) Click Continue
+
+4) Accept all terms and click Create Project
+
+5) Look the sidebar and expand Develop menu
+
+6)  Click Hosting Menu & from page click get started
+
+7) install NODEJS LTE Version
+https://nodejs.org/en/
+
+8)Check version of nodejs and npm
+node -v
+npm -v
+
+9)Install Firebase CLI
+npm install -g firebase-tools
+
+10) firebase login
+
+11) Allow Firebase to collect CLI usage and error reporting information? (Y/n) Yes
+
+12)firebase init
+
+13) Are you ready to proceed? (Y/n) yes
+
+14) Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices. 
+
+15) sect hosting and press enter
+
+16)Please select an option: (Use arrow keys)
+> Use an existing project
+
+17)What do you want to use as your public directory? (public) : press Enter
+
+18)Configure as a single-page app (rewrite all urls to /index.html)? Yes
+
+19)firebase deploy
+
+

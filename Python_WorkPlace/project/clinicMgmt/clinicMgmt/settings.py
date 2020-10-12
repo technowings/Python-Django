@@ -26,7 +26,7 @@ SECRET_KEY = '^3mptmuxr3+@-m@^zzch^37ne3c@u9)aut(jso+=!)n5f*0zq_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'loginweb.apps.LoginwebConfig',
     'crispy_forms',
+    'xlwt',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -80,13 +81,9 @@ WSGI_APPLICATION = 'clinicMgmt.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myproject',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -146,3 +143,8 @@ EMAIL_USE_TLS = True
 CNAME="Dr.Clinic"
 DEVLOPER="Bodhi Technology"
 VENDOR="XYZ"
+
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 10 # set just 10 seconds to test
+SESSION_SAVE_EVERY_REQUEST = True

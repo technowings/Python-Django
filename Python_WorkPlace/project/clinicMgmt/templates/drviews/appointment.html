@@ -12,9 +12,20 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
+
+
+
+    <section class="content container-fluid">
+      <div id="printarea">
+      
+    <table id="example1" class="table table-bordered table-striped table-hover">
+                                
       <thead>
+        
       <tr>
+       
+        <th>Sr.No.</th>
+        
         <th>Patient Name</th>
         <th>DOB</th>
         <th>Gender</th>
@@ -23,41 +34,60 @@
         <th>Patient Mobile</th>
         <th>Message</th>
       </tr>
+     
       </thead>
       <tbody>
+        {% for apo in appoint %}
+       
       <tr>
-        <td>Trident</td>
-        <td>Internet
-          Explorer 4.0
-        </td>
-        <td>Win 95+</td>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
+      
+        <td>{{forloop.counter}}</td>
+        
+        <td>{{apo.name}}</td>
+        <td>{{apo.dob}}</td>
+        <td>{{apo.gender}}</td>
+        <td>{{apo.appointment_date}}</td>
+        <td>{{apo.appointment_session}}</td>
+        <td>{{apo.mobile}}</td>
+        <td>{{apo.message}}</td>
       </tr>
-
+      {% endfor %}
 
 
 
 
 
       </tbody>
-      <!-- <tfoot>
+        <tfoot>
       <tr>
-        <th>Rendering engine</th>
-        <th>Browser</th>
-        <th>Platform(s)</th>
-        <th>Engine version</th>
-        <th>CSS grade</th>
+        
+        <th>Sr.No.</th>
+       
+        <th>Patient Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Appointment_date</th>
+        <th>Appointment_session</th>
+        <th>Patient Mobile</th>
+        <th>Message</th>
       </tr>
-      </tfoot> -->
+      </tfoot>  
      
     </table>
-    <div >
-   <a href="#"  > <input type="button" value="print"/>  </a>
-   <a href="#" > <input type="button" value="Export"/>  </a>
+   </div>
+  </section>
+
+<br>
+  
+    <div>
+
+      <!-- <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Print form"><i class="fa fa-print" onclick="PrintPreview()"></i></a> -->
+      <a href="#" >  <input type="button" value="Print view"  onclick="PrintPreview()"/></a>
+        <a href="#" >  <input type="button" value="Print preview"  onclick="PrintDoc()"/></a>
+   <a href="{% url 'export_appointment' %}" > <input type="button" value="Export-Excel"/>  </a>
   </div>
+
+
   </div>
   <!-- /.card-body -->
 </div>

@@ -5,6 +5,11 @@ from loginweb.forms import LoginForm,RegisterForm,PRegistrationForm
 from django.conf import settings as conf_set
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
+from website.models import Appointment
+import xlwt
+from xlwt.Formatting import Borders
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import cache_control
 
 def web_register(request):
     cname=conf_set.CNAME
@@ -71,7 +76,8 @@ def web_login(request):
         }        
     return render(request, "login/login.html",context)  
 
-
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@login_required(login_url='login')
 def web_dashboard(request):
     if request.session.has_key('username'):
         cname=conf_set.CNAME
@@ -94,10 +100,12 @@ def admin_appointment(request):
     if request.session.has_key('username'):
         cname=conf_set.CNAME
         user_name=request.session['username']
+        appoint=Appointment.objects.all()
         context = {
             'company':cname,
             'user':user_name,
-            'page_title':"Appointments"
+            'page_title':"Appointments",
+            'appoint':appoint
             }
         return render(request,"drviews/appointment.html",context)  
     else:
@@ -137,6 +145,45 @@ def admin_Pregister(request):
         'pregisterForm': pregisterForm,'company':cname,'user':user_name,'page_title':"Patients Registration"
         }        
     return render(request, "drviews/registration.html",context)
+
+
+
+def export_users_xls(request):
+    response = HttpResponse(content_type='application/ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="appointments.xls"'
+
+    wb = xlwt.Workbook(encoding='utf-8')
+    ws = wb.add_sheet('Appointments')
+
+    # Sheet header, first row
+    row_num = 0
+
+    excel_style = xlwt.XFStyle()
+    excel_style.font.bold = True
+    borders = xlwt.Borders()
+    borders.left = 1
+    borders.right = 1
+    borders.top = 1
+    borders.bottom = 1
+    excel_style.borders = borders
+    columns = ['Name', 'Dob', 'Gender', 'Appointment_date','Appointment_session','Mobile','Message', ]
+
+    for col_num in range(len(columns)):
+        ws.write(row_num, col_num, columns[col_num], excel_style)
+
+    # Sheet body, remaining rows
+    excel_style = xlwt.XFStyle()
+    excel_style.borders = borders
+    rows = Appointment.objects.all().values_list('name', 'dob', 'gender', 'appointment_date','appointment_session','mobile','message')
+    for row in rows:
+        row_num += 1
+        for col_num in range(len(row)):
+            ws.write(row_num, col_num, row[col_num], excel_style)
+
+    wb.save(response)
+    return response
+
+        
 
 
 
