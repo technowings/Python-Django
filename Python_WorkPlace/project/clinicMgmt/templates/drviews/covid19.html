@@ -15,6 +15,7 @@
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
+        <th>Sr.No.</th>
         <th>Patient Name</th>
         <th>DOB</th>
         <th>Gender</th>
@@ -31,36 +32,49 @@
       </tr>
       </thead>
       <tbody>
+        {% for a in covid %}
       <tr>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
-        <td> 4</td>
-        <td>X</td>
+        <td>{{forloop.counter}}</td>
+        <!-- check model filed name and use here .... replace pName with model filed name -->
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
+        <td> {{a.pName}}</td>
+        <td>{{a.pName}}</td>
       </tr>
-
+{% endfor %}
 
 
 
 
 
       </tbody>
-      <!-- <tfoot>
+       <tfoot>
       <tr>
-        <th>Rendering engine</th>
-        <th>Browser</th>
-        <th>Platform(s)</th>
-        <th>Engine version</th>
-        <th>CSS grade</th>
+        <th>Sr.No.</th>
+        <th>Patient Name</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Date of Checkup</th>
+        <th>Patient Mobile</th>
+        <th>Weight</th>
+        <th>Pulse</th>
+        <th>Blood pressure</th>
+        <th>temprature</th>
+        <th>spo2</th>
+        <th>Comorbidity_existing_disease</th>
+        <th>Symptoms</th>
       </tr>
-      </tfoot> -->
+      </tfoot> 
      
     </table>
     <div >

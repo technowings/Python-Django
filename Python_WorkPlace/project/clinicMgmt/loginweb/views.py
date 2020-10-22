@@ -1,15 +1,23 @@
 from django.shortcuts import redirect,render
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from loginweb.forms import LoginForm,RegisterForm,PRegistrationForm
+from loginweb.forms import LoginForm,RegisterForm,PRegistrationForm,PrecForm
 from django.conf import settings as conf_set
 from django.contrib import messages
 from django.contrib.auth.models import User,auth
-from website.models import Appointment
+from website.models import Appointment,Covid19
+from loginweb.models import PatientRegister,PatientPrec
 import xlwt
 from xlwt.Formatting import Borders
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from datetime import date
+
+
+cname=conf_set.CNAME
+
 
 def web_register(request):
     cname=conf_set.CNAME
@@ -82,10 +90,17 @@ def web_dashboard(request):
     if request.session.has_key('username'):
         cname=conf_set.CNAME
         user_name=request.session['username']
+        #x=str(datetime.date.now())
+        today = date.today() 
+        print(today)
+        appoint = Appointment.objects.filter(appointment_date=today).count()
+        covid= Covid19.objects.filter(date_of_checkup=today).count()
         context = {
             'company':cname,
             'user':user_name,
-            'page_title':"Dashboard"
+            'page_title':"Dashboard",
+            "appoint":appoint,
+            "covid":covid
             }
         return render(request,"drviews/dashboard.html",context) 
     else:
@@ -114,10 +129,12 @@ def admin_appointment(request):
 def admin_covid19(request):
     if request.session.has_key('username'):
         cname=conf_set.CNAME
-        user_name=request.session['username']        
+        user_name=request.session['username']  
+        covid=Covid19.objects.all()      
         context={'company':cname,
             'user':user_name,
-            'page_title':"Covid19"
+            'page_title':"Covid19",
+            "covid":covid
             }
         return render(request,"drviews/covid19.html",context)
     else:
@@ -127,28 +144,36 @@ def admin_Pregister(request):
     if request.session.has_key('username'):
         cname=conf_set.CNAME
         user_name=request.session['username'] 
+        
         if request.method=='GET':
             pregisterForm=PRegistrationForm()
         else:
-            pregisterForm=PRegistrationForm(request.POST)
+            pregisterForm=PRegistrationForm(request.POST,request.FILES)
             if pregisterForm.is_valid():
-                user_email=pregisterForm.cleaned_data['PR_email']
-                user_fistname=pregisterForm.cleaned_data['PR_firstname']
-                user_lastname=pregisterForm.cleaned_data['PR_lastname']
                 try:
-                    pass
+                    patient=PatientRegister()
+                    patient.email=pregisterForm.cleaned_data['PR_email']
+                    patient.fname=pregisterForm.cleaned_data['PR_firstname']
+                    patient.lname=pregisterForm.cleaned_data['PR_lastname']
+                    patient.mobile=pregisterForm.cleaned_data['PR_mobile']
+                    patient.address=pregisterForm.cleaned_data['PR_address']
+                    patient.phto=pregisterForm.cleaned_data['PR_photo']
+                    patient.dob=pregisterForm.cleaned_data['PR_dob']
+                    patient.sex=pregisterForm.cleaned_data['PR_sex']
+                    patient.save()
+                    
+                    return redirect('admin_pregister')
                 except:
                     return HttpResponse('Invalid header found. here...')
                 #return redirect('register')   
-
+    pregisterdata=PatientRegister.objects.all()
     context = {
-        'pregisterForm': pregisterForm,'company':cname,'user':user_name,'page_title':"Patients Registration"
-        }        
+        'pregisterForm': pregisterForm,'company':cname,'user':user_name,'page_title':"Patients Registration","pregisterdata":pregisterdata,}        
     return render(request, "drviews/registration.html",context)
 
 
 
-def export_users_xls(request):
+def export_appointments_xls(request):
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="appointments.xls"'
 
@@ -183,9 +208,98 @@ def export_users_xls(request):
     wb.save(response)
     return response
 
-        
 
 
 
 
 
+
+def change_pass(request):
+    if request.session.has_key('username'):
+        lname=request.user.first_name 
+        fname=request.user.first_name
+        if request.method == 'POST':
+            form = PasswordChangeForm(request.user, request.POST)
+            if form.is_valid():
+                user = form.save()
+                update_session_auth_hash(request, user)  # Important!
+                messages.success(request, 'Your password has been changed successfully!')
+                return redirect('change_password')
+            else:
+                messages.error(request, 'Please correct the error below.')
+        else:
+            form = PasswordChangeForm(request.user)
+        context = {
+            
+            'lname':lname,
+            'fname':fname,
+             "form":form
+            }    
+        return render(request, 'drviews/changepass.html',context) 
+    else:
+        return redirect('login')  
+
+
+
+def admin_history(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']
+        pregisterdata=PatientRegister.objects.all()
+        context = {
+            'company':cname,
+            'user':user_name,
+            'page_title':"Appointments",
+            'pregisterdata':pregisterdata
+            }
+        return render(request,"drviews/history.html",context) 
+    else:
+        return redirect('login')
+
+    
+
+
+def admin_addPrec(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']
+        if request.method=='GET':
+            precform=PrecForm()
+        else:
+            precform=PrecForm(request.POST)
+            precmodel=PatientPrec()
+            if precform.is_valid():
+               precmodel.prec=precform.cleaned_data['prec']
+               #precmodel.patient=precform.cleaned_data['prec']
+               precmodel.save()
+               messages.success(request, 'Precription save sucessfully!')
+              
+
+        context = {
+            'company':cname,
+            'user':user_name,
+            'page_title':"Add Precription",
+            'precform':precform
+            }
+        return render(request,"drviews/prec_add.html",context)
+    else:
+        return redirect('login')
+   
+
+
+
+def admin_prescr(request):
+    if request.session.has_key('username'):
+        cname=conf_set.CNAME
+        user_name=request.session['username']
+        pregisterdata=PatientRegister.objects.all()
+        context = {
+            'company':cname,
+            'user':user_name,
+            'page_title':"Precription",
+            'pregisterdata':pregisterdata
+            }
+        return render(request,"drviews/precription.html",context) 
+    else:
+        return redirect('login')
+    

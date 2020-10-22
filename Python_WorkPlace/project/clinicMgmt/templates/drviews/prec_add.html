@@ -1,0 +1,67 @@
+{% extends "layout/admin_base_layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}{{company}} | Add Precription {% endblock %}
+
+
+{% block content %}
+<br>
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Patient Precription</h3>
+
+    <div>
+      {% if messages %}          
+      {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %} </div>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <form enctype="multipart/form-data" method="POST" id="myform">
+      {% csrf_token %}
+     
+    
+      <div class="row">
+       
+      
+        <div class="col-sm-12">
+          <!-- text input -->
+          <div class="form-group">
+            {{ precform.prec|as_crispy_field }}
+          </div>
+        </div>
+       
+
+               
+      
+              
+    </div>   <!-- /.row -->
+    
+                   
+    <div class="modal-footer justify-content-between">
+      <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button> -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  
+</form> 
+    <!-- <div >
+   <a href="#"  > <input type="button" value="print"/>  </a>
+   <a href="#" > <input type="button" value="Export"/>  </a>
+  </div> -->
+  </div>
+  <!-- /.card-body -->
+</div>
+<!-- /.card -->
+
+
+
+</div>
+{% endblock %}

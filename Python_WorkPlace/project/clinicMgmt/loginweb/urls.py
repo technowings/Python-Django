@@ -9,5 +9,9 @@ urlpatterns=[
     path('appointment',views.admin_appointment,name='admin_appointment'),
     path('covid',views.admin_covid19,name='admin_covid19'),
     path('registration',views.admin_Pregister,name='admin_pregister'),
-    path('export_appoint',views.export_users_xls,name='export_appointment'),
+    path('export_appoint',views.export_appointments_xls,name='export_appointment'),
+    path('history',views.admin_history,name='history'),
+    path('prescription',views.admin_prescr,name='prescr'),
+    path('addprescription',views.admin_addPrec,name='addprescr'),
+    path('changepassword',views.change_pass,name='changepassword'),
 ]

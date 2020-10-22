@@ -13,7 +13,7 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <form method="POST" id="myform">
+    <form enctype="multipart/form-data" method="POST" id="myform">
       {% csrf_token %}
      
     
@@ -32,10 +32,45 @@
             {{ pregisterForm.PR_lastname|as_crispy_field }}
           </div>
         </div>
+
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_dob|as_crispy_field }}
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_sex|as_crispy_field }}
+          </div>
+        </div> 
+
+
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_mobile|as_crispy_field }}
+          </div>
+        </div>
         <div class="col-sm-3">
           <!-- text input -->
           <div class="form-group" >
             {{ pregisterForm.PR_email|as_crispy_field }}
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_address|as_crispy_field }}
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <!-- text input -->
+          <div class="form-group" >
+            {{ pregisterForm.PR_photo|as_crispy_field }}
           </div>
         </div>
 
@@ -70,43 +105,51 @@
     <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
+        <th>Sr.No.</th>
         <th>Patient Name</th>
+        <th>Patient Lastname</th>
         <th>DOB</th>
         <th>Gender</th>
-        <th>Appointment_date</th>
-        <th>Appointment_session</th>
-        <th>Patient Mobile</th>
-        <th>Message</th>
+        <th>mobile</th>
+        <th>email</th>
+        <th>address</th>
+        <th>phto</th>
       </tr>
       </thead>
       <tbody>
+        {% for xyz in pregisterdata %}
       <tr>
-        <td>Trident</td>
-        <td>Internet
-          Explorer 4.0
-        </td>
-        <td>Win 95+</td>
-        <td> 4</td>
-        <td>X</td>
-        <td>   <a href="#" > <input type="button" value="Print"/>  </a></td>
-        <td><a href="#" > <input type="button" value="Export"/>  </a></td>
+        <td>{{forloop.counter}}</td>
+        <td>{{xyz.fname}}</td>
+        <td>{{xyz.lname}}</td>
+        <td>{{xyz.dob}}</td>
+        <td>{{xyz.gender}}</td>
+        <td>{{xyz.mobile}}</td>
+        <td>{{xyz.email}}</td>
+        <td>{{xyz.address}}</td>
+        <td><img src="{{xyz.imge.url}}"></td>
+       
       </tr>
-
+{% endfor %}
 
 
 
 
 
       </tbody>
-      <!-- <tfoot>
+       <tfoot>
       <tr>
-        <th>Rendering engine</th>
-        <th>Browser</th>
-        <th>Platform(s)</th>
-        <th>Engine version</th>
-        <th>CSS grade</th>
+        <th>Sr.No.</th>
+        <th>Patient Name</th>
+        <th>Patient Lastname</th>
+        <th>DOB</th>
+        <th>Gender</th>
+        <th>mobile</th>
+        <th>email</th>
+        <th>address</th>
+        <th>phto</th>
       </tr>
-      </tfoot> -->
+      </tfoot> 
      
     </table>
     <div >

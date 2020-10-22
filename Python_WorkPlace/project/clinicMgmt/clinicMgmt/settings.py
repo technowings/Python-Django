@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -130,21 +131,22 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'staticdata/')
 ]
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-EMAIL_HOST = 'smtp-mail.outlook.com'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+CNAME="Dr.Clinic"
+EMAIL_HOST = 'smtp-mail.gmail.com'
 EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = 'your email'
-EMAIL_HOST_PASSWORD = 'your password'
+EMAIL_HOST_USER = 'pythondjano22@gmail.com'
+EMAIL_HOST_PASSWORD = 'django@22'
 EMAIL_USE_TLS = True
-CNAME="Dr.Clinic"
-DEVLOPER="Bodhi Technology"
-VENDOR="XYZ"
 
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 10 # set just 10 seconds to test
+SESSION_COOKIE_AGE = 10*60 # set just 10*60 seconds to test
 SESSION_SAVE_EVERY_REQUEST = True
